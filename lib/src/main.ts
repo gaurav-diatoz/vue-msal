@@ -83,6 +83,8 @@ export class MSAL implements MSALBasic {
         this.executeCallbacks();
         // Register Callbacks for redirect flow
         this.lib.handleRedirectCallback((error: AuthError, response: AuthResponse) => {
+            console.log("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF",error)
+            console.log("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",response)
             if (!this.isAuthenticated()) {
                 this.saveCallback('auth.onAuthentication', error, response);
             } else {
